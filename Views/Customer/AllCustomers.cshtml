@@ -1,0 +1,30 @@
+@model IEnumerable<Customer>
+
+<h2>All Customers</h2>
+<div class="row row-cols-1 row-cols-lg-3">
+    @foreach (Customer c in Model)
+    {
+        <div class="col customers px-2 py-4">
+            <h3>@c.CompanyName</h3>
+            <div class="pl-2">
+                <span>@c.Address</span><br>
+                <span>@c.City @if (c.City != null)
+                    {
+                        <span>, </span>
+                    }</span>
+                <span>@c.Region</span>
+                <span>@c.PostalCode </span><br>
+                <span>@c.Country</span><br>
+                <span>@if (c.City != null)
+                    {
+                        <span>Phone# </span>
+                    }<span> @c.Phone</span><br>
+                    <span>@if (c.City != null)
+                        {
+                            <span>Fax# </span>
+                        }<span> @c.Fax</span>
+            </div>
+
+        </div>
+    }
+</div>

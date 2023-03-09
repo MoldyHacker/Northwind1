@@ -5,10 +5,11 @@ public class CustomerController : Controller
     private NorthwindContext _northwindContext;
     public CustomerController(NorthwindContext db) => _northwindContext = db;
 
+    public IActionResult AllCustomers() => View(_northwindContext.Customers.OrderBy(c => c.CompanyName));
+
     public IActionResult Register() => View();
 
     [HttpPost]
-    // [ValidateAntiForgeryToken]
     public IActionResult Register(Customer customer)
     {
         if (ModelState.IsValid)
@@ -21,7 +22,7 @@ public class CustomerController : Controller
             {
                 _northwindContext.Add(customer);
                 _northwindContext.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("AllCustomers", "Customer");
             }
         }
         return View();
