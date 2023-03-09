@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "build": "dotnet build --configuration Release",
+        "test": "dotnet test --configuration Release",
+        "ci": "dotnet r build && dotnet r test",
+        "run": "dotnet watch run r",
+        "azure-build": "dotnet publish -c Release -o ./bin/Publish",
+        "database-update": "dotnet ef database update"
+    }
+}
