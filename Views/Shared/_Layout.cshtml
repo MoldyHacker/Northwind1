@@ -16,7 +16,7 @@
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
     <!-- client -->
-    <link rel="stylesheet" href="~/css/client.css" />
+    <link rel="stylesheet" href="/css/client.css" />
 </head>
 
 <body>
@@ -42,7 +42,8 @@
                                     Categories</a>
                                 <a class="dropdown-item" href="#"><i class="fas fa-search"></i> Product Search</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fas fa-tag"></i> Current Discounts</a>
+                                <a class="dropdown-item" asp-controller="Product" asp-action="Discounts"><i
+                                        class="fas fa-tag"></i> Current Discounts</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -62,6 +63,19 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+    </div>
+
+    <!-- toast -->
+    <div id="toast" class="toast">
+        <div class="toast-header">
+            <strong class="mr-auto" id="product">Product Name</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            Discount Code: <strong id="code">CODE</strong>
+        </div>
     </div>
 
     <footer class="border-top footer text-muted">
