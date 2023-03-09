@@ -46,8 +46,17 @@
                                         class="fas fa-tag"></i> Current Discounts</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-users"></i> Customers</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-users"></i> Customers
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Account</a>
+                                <a class="dropdown-item" asp-controller="Customer" asp-action="Register"><i
+                                        class="fas fa-address-card"></i> Register</a>
+                            </div>
                         </li>
                     </ul>
                 </div>

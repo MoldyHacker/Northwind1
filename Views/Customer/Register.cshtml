@@ -1,0 +1,45 @@
+@model Customer
+<h1><i class="far fa-address-card"></i>Customer Registration</h1>
+
+<form method="post" asp-action="Register">
+    <div asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label asp-for="@Model.CompanyName">Company Name</label>
+        <input asp-for="@Model.CompanyName" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Address">Address</label>
+        <input asp-for="@Model.Address" type="text" class="form-control" placeholder="1234 Main St">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="@Model.City">City</label>
+            <input asp-for="@Model.City" type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-4">
+            <label asp-for="@Model.Region">Region</label>
+            <input asp-for="@Model.Region" type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-2">
+            <label asp-for="@Model.PostalCode">Postal Code</label>
+            <input asp-for="@Model.PostalCode" type="text" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Country">Country</label>
+        <input asp-for="@Model.Country" type="text" class="form-control">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="@Model.Phone">Phone Number</label>
+            <input asp-for="@Model.Phone" type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="@Model.Fax">Fax Number</label>
+            <input asp-for="@Model.Fax" type="text" class="form-control">
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
